@@ -1,7 +1,16 @@
 language: ruby
+
 rvm:
  - 2.3
+
 install: 
  - gem install bundler
  - bundle install
+
 script: jekyll build
+
+# safelist
+# since we're using pull request builds, we don't need to build every time we commit to feature branches
+branches:
+  only:
+  - master
