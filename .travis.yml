@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+ - 2.3
+install: 
+ - gem install bundler
+ - bundle install
+script: jekyll build
