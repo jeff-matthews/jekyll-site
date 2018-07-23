@@ -1,14 +1,15 @@
-version: 0.1
+version: 0.2
 
 phases:
-  # install:
-  #   commands:
-  #     - gem install jekyll
-  build:
+  pre_build:
     commands:
       - echo "******** Installing dependencies ********"
       - bundle install
+  build:
+    commands:
       - echo "******** Building Jekyll site ********"
       - jekyll build
+  post_build:
+    commands:
       - echo "******** Uploading to S3 ********"
       - aws s3 sync _site/ s3://jekyll-site-test
