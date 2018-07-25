@@ -12,4 +12,4 @@ phases:
   post_build:
     commands:
       - echo "******** Uploading to S3 ********"
-      - aws s3 sync docs/ s3://jekyll-site-demo
+      - aws s3 sync _site/ s3://jekyll-site-demo
