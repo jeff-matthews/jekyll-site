@@ -1,6 +1,10 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "******** Installing bundler ********"
+      - gem install bundler
   pre_build:
     commands:
       - echo "******** Installing dependencies ********"
