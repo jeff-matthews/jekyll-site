@@ -17,4 +17,5 @@ phases:
     commands:
       - echo "******** Uploading to S3 ********"
       # Use the --delete option to remove deleted local files from the S3 bucket
-      - aws s3 sync _site/ s3://jekyll-site-demo --delete
+      # - aws s3 sync _site/ s3://jekyll-site-demo --delete
+      - ./build.sh
