@@ -13,7 +13,7 @@ if [ "$BRANCH" != "master" ]; then
   aws s3 sync _site/ s3://jekyll-site-demo-staging/$BRANCH --delete;
 
 elif [ "$BRANCH" = "master" ]; then
-  echo 'Deploy production';
+  echo 'Deploy to production';
   aws s3 sync _site/ s3://jekyll-site-demo/ --delete;
 
 fi
