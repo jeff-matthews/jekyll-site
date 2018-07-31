@@ -17,9 +17,3 @@ branches:
 
 # after_success:
 #   - ./build.sh
-
-deploy:
-  provider: script
-  script: bash build.sh
-  on:
-    branch: master
