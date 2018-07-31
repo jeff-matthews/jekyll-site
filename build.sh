@@ -6,9 +6,11 @@
 # set "fail on error" in bash
 set -e
 
-# This command seems to return "HEAD" was the branch name.
+# This succeeds, but returns "HEAD" as the branch name and uploads files to a HEAD directory in S3.
 # BRANCH=$(git rev-parse --abbrev-ref HEAD)
-BRANCH=$(git branch)
+# This fails
+# BRANCH=$(git branch)
+BRANCH=$(git symbolic-ref --short HEAD)
 
 if [ "$BRANCH" != "master" ]; then
   echo 'Deploy to a staging directory';
