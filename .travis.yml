@@ -15,4 +15,5 @@ branches:
   only:
   - master
 
-after_success: ./build.sh
+after_success:
+  - ./build.sh
