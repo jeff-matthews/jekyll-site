@@ -10,7 +10,9 @@ set -e
 # BRANCH=$(git rev-parse --abbrev-ref HEAD)
 # This fails
 # BRANCH=$(git branch)
-BRANCH=$(git symbolic-ref --short HEAD)
+# This fails with "fatal: ref HEAD is not a symbolic ref"
+# BRANCH=$(git symbolic-ref --short HEAD)
+BRANCH=$(git branch | grep \* | cut -d ' ' -f2)
 
 if [ "$BRANCH" != "master" ]; then
   echo 'Deploy to a staging directory';
