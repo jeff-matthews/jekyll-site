@@ -20,5 +20,5 @@ phases:
       - echo "******** Uploading to S3 ********"
       # Use the --delete option to remove deleted local files from the S3 bucket
       # - aws s3 sync _site/ s3://jekyll-site-demo --delete
-      # Use a build scipt to deploy to staging or prodution
+      # Use a build scipt to deploy to staging or prodution. You must use `sh script.sh` vs `./script` or AWS will throw an Access Denied error
       - sh build.sh

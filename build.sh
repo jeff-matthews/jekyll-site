@@ -6,7 +6,9 @@
 # set "fail on error" in bash
 set -e
 
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
+# This command seems to return "HEAD" was the branch name.
+# BRANCH=$(git rev-parse --abbrev-ref HEAD)
+BRANCH=$(git branch)
 
 if [ "$BRANCH" != "master" ]; then
   echo 'Deploy to a staging directory';
