@@ -5,6 +5,8 @@ phases:
     commands:
       - echo "******** Installing bundler ********"
       - gem install bundler
+      - echo "******** Installing git ********"
+      - sudo apt-get install git
   pre_build:
     commands:
       - echo "******** Installing dependencies ********"
