@@ -10,7 +10,7 @@ set -e
 # BRANCH=$(git rev-parse --abbrev-ref HEAD)
 # Identify the SHA, then ID the branch. Could be problematic if the SHA belongs to multiple branches...
 COMMIT=$(git rev-parse --verify HEAD)
-BRANCH=$(git branch --contains $COMMIT)
+BRANCH=$(git branch --contains $COMMIT | grep \* | cut -d ' ' -f2)
 
 if [ "$BRANCH" != "master" ]; then
   echo 'Deploy to a staging directory';
