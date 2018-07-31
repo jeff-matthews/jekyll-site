@@ -3,7 +3,7 @@ language: ruby
 rvm:
  - 2.3
 
-install: 
+install:
  - gem install bundler
  - bundle install
 
@@ -14,3 +14,6 @@ script: jekyll build
 branches:
   only:
   - master
+
+after_success:
+  - ./build.sh
