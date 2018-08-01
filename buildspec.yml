@@ -9,8 +9,8 @@ phases:
     commands:
       - echo "******** Installing dependencies ********"
       - bundle install
-      - echo "******** Making build.sh executable ********"
-      - chmod u+x build.sh
+      # - echo "******** Making build.sh executable ********"
+      # - chmod u+x build.sh
   build:
     commands:
       - echo "******** Building Jekyll site ********"
