@@ -5,13 +5,10 @@ phases:
     commands:
       - echo "******** Installing bundler ********"
       - gem install bundler
-      - printenv
   pre_build:
     commands:
       - echo "******** Installing dependencies ********"
       - bundle install
-      - echo "******** Making build.sh executable ********"
-      - chmod u+x build.sh
   build:
     commands:
       - echo "******** Building Jekyll site ********"
