@@ -5,7 +5,7 @@ phases:
     commands:
       - echo "******** Installing bundler ********"
       - gem install bundler
-      - printenv $CODEBUILD_SOURCE_VERSION
+      - printenv
   pre_build:
     commands:
       - echo "******** Installing dependencies ********"
