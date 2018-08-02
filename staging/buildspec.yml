@@ -12,9 +12,9 @@ phases:
   build:
     commands:
       - echo "******** Setting staging baseurl ********"
-      - sh baseurl.sh
+      - sh baseurl.sh _config.staging.yml
       - echo "******** Building Jekyll site ********"
-      - jekyll build
+      - jekyll build --config _config.yml,_config.staging.yml
   post_build:
     commands:
       # - echo "******** Uploading to S3 ********"
