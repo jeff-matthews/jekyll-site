@@ -11,8 +11,10 @@ phases:
       - bundle install
   build:
     commands:
+      - echo "******** Setting staging baseurl ********"
+      - sh baseurl.sh
       - echo "******** Building Jekyll site ********"
-      - jekyll buil
+      - jekyll build
   post_build:
     commands:
       # - echo "******** Uploading to S3 ********"
