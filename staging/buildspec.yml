@@ -11,10 +11,10 @@ phases:
       - bundle install
   build:
     commands:
-      - echo "******** Setting staging baseurl ********"
-      - sh baseurl.sh _config.staging.yml
+      # - echo "******** Setting staging baseurl ********"
+      # - sh baseurl.sh _config.staging.yml
       - echo "******** Building Jekyll site ********"
-      - jekyll build --config _config.yml,_config.staging.yml
+      - jekyll build --baseurl $CODEBUILD_SOURCE_VERSION
   post_build:
     commands:
       # - echo "******** Uploading to S3 ********"
